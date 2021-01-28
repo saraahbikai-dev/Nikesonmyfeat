@@ -1,224 +1,173 @@
-body {
-	perspective: 1100px;
-	background: rgba(0, 0, 0, 1);
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+body{
+  background: #5c746a;
+  background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAIElEQVQoU2NcWuD6v2nfFwZcgFFdz/I/TlkGBobhoQAAGHYPccmxFlIAAAAASUVORK5CYII=) repeat;
+  color: #1c1c1c;
+  font-family: 'Raleway', sans-serif;
+  font-size: 5vw;
+}
+ul {
+  display: grid;
+  grid-template-columns: repeat(1,1fr);
+  transform-origin: top right;
+  transform: skewY(-4.398705355deg);
+  margin: 0 6.4vw 0 28%;
+}
+li{
+  transform-origin: top left;
+  transform: skewY(4.398705355deg) rotatez(14.03624deg);
+  padding-top: 150%;
+  z-index: 1;
+  transition-property: z-index;
+  transition-duration: .3s;
+}
+.details{
+  position: absolute;
+  z-index: 2;
+  width: 98%;
+  height: 95%;
+  top: 0;
+  background-color: #DADDDF;
+  border-radius: 2vw;
+  box-shadow: inset 0px 0px 0px 7vw #FCF8F4;
+  box-sizing: border-box;
+  webkit-filter: drop-shadow(2px 6px 3px rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(2px 6px 3px rgba(0, 0, 0, 0.4));
+  transform: rotate(0deg) translate(0, 0);
+  transition-property: transform;
+  transition-duration: .3s;
 }
 
-* {
-	transition: all 1s ease;
+h2, p, img {
+  position: absolute;
+  z-index: 4;
 }
 
-.img{
-	display:none !important;
-	opacity:0 !important;
-	position:Absolute !important;
-	left: -999%;
-	top:-999%;
+p{
+ font-size:1.4em; 
+  background-color: #FCF8F4;
+  padding: 2% 2.5% 2% 2.5%;
+}
+p:nth-child(2n){
+  top: 3%;
+  left: 5%;
+}
+p:nth-child(2n+1){
+  transform: rotatez(180deg);
+  bottom: 3%;
+  right: 5%;
+}
+h2{
+  text-align: center;
+  width: 122%;
+  left: -11%;
+  top: 46%;
+  transform: rotatez(-45deg);
+  background-color: #FCF8F4;
+  line-height: 140%;
+  transition-property: top;
+  transition-duration: .3s;
+}
+img{
+  width: 84%;
+  top: 50%;
+  left: 50%;
+}
+img:nth-child(2n){
+  transform: translateX(-30%) translateY(5%) rotatez(135deg);
+  transition-property: width,transform;
+  transition-duration: .3s;
+}
+img:nth-child(2n+1){
+  transform: translateX(-70%) translateY(-105%) rotatez(-45deg);
+  transition-property: width,transform;
+  transition-duration: .3s;
 }
 
-.box {
-	position: relative;
-	width: 65%;
-	margin: 5% auto;
-	padding-bottom: 25%;
-	transform: rotateY(29deg);
-	transform-style: preserve-3d;
-	div.top {
-		position: absolute;
-		top: 0;
-		width: 30.3%;
-		height: 100%;
-		float: left;
-		background-image: url('https://www.easypano.com/images/pw/v3/banner.jpg');
-		background-size: auto 100%;
-		transform-style: preserve-3d;
-		outline: 1px solid transparent;
-		-webkit-backface-visibility: hidden !important;
-		/* prevent jagged edges in firefox */
-		-webkit-animation: changeIt 25s infinite;
-		/* Safari 4.0 - 8.0 */
-		animation: changeIt 25s infinite;
-		&:before {
-			content: "";
-			width: 100%;
-			height: 100%;
-			position: absolute;
-			top: 0;
-			left: 0;
-			background: rgba(#1abc9c, .15);
-		}
-	}
-	.left {
-		left: 0;
-		background-position: 0% 0;
-	}
-	.center {
-		left: 34.83%;
-		background-position: -100% 0;
-	}
-	.right {
-		left: 69.66%;
-		background-position: -197% 0;
-	}
-	div.top > .side {
-		content: '';
-		position: absolute;
-		top: 0;
-		right: 100%;
-		width: 10%;
-		height: 100%;
-		background: url('https://www.easypano.com/images/pw/v3/banner.jpg');
-		background-size: auto 100%;
-		transform-origin: 100% 50%;
-		transform: rotateY(-90deg);
-		-webkit-backface-visibility: hidden !important;
-		-webkit-animation: changeIt 25s infinite;
-		/* Safari 4.0 - 8.0 */
-		animation: changeIt 25s infinite;
-		&:before {
-			content: "";
-			width: 100%;
-			height: 100%;
-			position: absolute;
-			top: 0;
-			left: 0;
-			background: rgba(#1abc9c, .15);
-		}
-	}
-	.left > .side {
-		background-position: 0% 0;
-	}
-	.center > .side {
-		background-position: -798% 0px !important;
-	}
-	.right > .side {
-		background-position: -2000.4% 0 !important;
-	}
-	div.top .reflection {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		transform-origin: 50% 100%;
-		transform: rotateX(-90deg);
-		background-image: url('https://www.easypano.com/images/pw/v3/banner.jpg');
-		background-size: auto 100%;
-		outline: 1px solid transparent;
-		-webkit-animation: changeIt 25s infinite;
-		/* Safari 4.0 - 8.0 */
-		animation: changeIt 25s infinite;
-	}
-	.left > .reflection {
-		left: 0;
-		background-position: 0% 0;
-	}
-	.center > .reflection {
-		left: 34.83%;
-		background-position: -100% 0;
-	}
-	.right > .reflection {
-		left: 69.66%;
-		background-position: -197% 0;
-	}
-	.overlay {
-		content: "";
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 99.7%;
-		transform-origin: 50% 100%;
-		transform: rotateX(-90deg);
-		background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.6) 123%);
-		outline: 15px solid black;
-	}
+li:hover{ 
+  z-index: 4;
+}
+li:hover h2{ 
+  top: 64%;
+}
+li:hover .details{ 
+  transform: rotate(-14.03624deg) translate(5.5%, 15%) scale(1.5);
+}
+li:hover img:nth-child(2n){ 
+  width: 60%;
+  transform: translateX(-15%) translateY(60%) rotatez(135deg);
+}
+li:hover img:nth-child(2n+1){ 
+  width: 120%;
+  transform: translateX(-65%) translateY(-75%) rotatez(-45deg);
+}
+@media (min-width:300px) { 
+  body{
+    font-size: 2.75vw;
+  }
+  ul {
+    grid-template-columns: repeat(2,1fr);
+    grid-column-gap: 3vw;
+    margin: 0 3.9vw 0 15vw;
+  }
+  .details{
+    box-shadow: inset 0px 0px 0px 4vw #FCF8F4;
+  }
 }
 
-@-webkit-keyframes changeIt {
-	0% {
-		background-image: url(https://www.easypano.com/images/pw/v3/banner.jpg)
-	}
-	20% {
-		background-image: url(https://www.publicdomainpictures.net/pictures/170000/velka/beautiful-landscape-panorama-1462783515FyK.jpg)
-	}
-	40% {
-		background-image: url(https://www.publicdomainpictures.net/pictures/30000/velka/arizona-sunrise-panarama-1348420056Bcg.jpg)
-	}
-	60% {
-		background-image: url(https://www.publicdomainpictures.net/pictures/190000/velka/waterfall-ben-nevis-scotland-1471093009J8y.jpg)
-	}
-	80% {
-		background-image: url(https://upload.wikimedia.org/wikipedia/commons/0/04/Bibi-Ka-Maqbara-pano.jpg)
-	}
-	100% {
-		background-image: url(http://www.easypano.com/images/pw/v3/banner.jpg)
-	}
+@media (min-width:600px) { 
+  body{
+    font-size: 1.95vw;
+  }
+  ul {
+    grid-template-columns: repeat(3,1fr);
+    grid-column-gap: 2vw;
+    margin: 0 2.8vw 0 10vw;
+  }
+  .details{
+    box-shadow: inset 0px 0px 0px 2.8vw #FCF8F4;
+  }
 }
 
-
-/* Standard syntax */
-
-@keyframes changeIt {
-	0% {
-		background-image: url(http://www.easypano.com/images/pw/v3/banner.jpg)
-	}
-	20% {
-		background-image: url(http://www.publicdomainpictures.net/pictures/170000/velka/beautiful-landscape-panorama-1462783515FyK.jpg)
-	}
-	40% {
-		background-image: url(http://www.publicdomainpictures.net/pictures/30000/velka/arizona-sunrise-panarama-1348420056Bcg.jpg)
-	}
-	60% {
-		background-image: url(http://www.publicdomainpictures.net/pictures/190000/velka/waterfall-ben-nevis-scotland-1471093009J8y.jpg)
-	}
-	80% {
-		background-image: url(https://upload.wikimedia.org/wikipedia/commons/0/04/Bibi-Ka-Maqbara-pano.jpg)
-	}
-	100% {
-		background-image: url(http://www.easypano.com/images/pw/v3/banner.jpg)
-	}
+@media (min-width:900px) { 
+  body{
+    font-size: 1.5vw;
+  }
+  ul {
+    grid-template-columns: repeat(4,1fr);
+    grid-column-gap: 1.5vw;
+    margin: 0 2.2vw 0 8vw;
+  }
+  .details{
+    box-shadow: inset 0px 0px 0px 2.2vw #FCF8F4;
+  }
 }
 
-
-/* Profile Link */
-/* Profile Link */
-@mixin responsive-font($responsive,
-$min,
-$max: false,
-$fallback: false) {
-	$responsive-unitless: $responsive / ($responsive - $responsive + 1);
-	$dimension: if(unit($responsive)=='vh', 'height', 'width');
-	$min-breakpoint: $min / $responsive-unitless * 100;
-	@media (max-#{$dimension}: #{$min-breakpoint}) {
-		font-size: $min;
-	}
-	@if $max {
-		$max-breakpoint: $max / $responsive-unitless * 100;
-		@media (min-#{$dimension}: #{$max-breakpoint}) {
-			font-size: $max;
-		}
-	}
-	@if $fallback {
-		font-size: $fallback;
-	}
-	font-size: $responsive;
+@media (min-width:1200px) { 
+  body{
+    font-size: 1.25vw;
+  }
+  ul {
+    grid-template-columns: repeat(5,1fr);
+    grid-column-gap: 1vw;
+    margin: 0 1.8vw 0 6.5vw;
+  }
+  .details{
+    box-shadow: inset 0px 0px 0px 1.8vw #FCF8F4;
+  }
 }
 
-$size:3vw;
-$max:36px;
-.button.me {
-	@include responsive-font($size, $size, $max, $max);
-	position: absolute;
-	bottom: -75%;
-	right: 5%;
-	display:flex;
-	justify-content:center;
-	align-items:center;
-	opacity:.5;
-	transition:opacity .5s ease;
-	border-radius:5px;
-	z-index:9999;
-	&:hover {
-		opacity: 1;
-	}
+@media (min-width:1500px) { 
+  body{
+    font-size: 1vw;
+  }
+  ul {
+    grid-template-columns: repeat(6,1fr);
+    grid-column-gap: 1vw;
+    margin: 0 1.5vw 0 5.5vw;
+  }
+  .details{
+    box-shadow: inset 0px 0px 0px 1.5vw #FCF8F4;
+  }
 }
