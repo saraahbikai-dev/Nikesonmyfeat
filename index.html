@@ -7,60 +7,29 @@
   <link rel = "stylesheet" type="text/css" href= "stylesheet/style.css" />
  
 </head>
-
-<body>
-    <main class="main">
-        <div class="signup-section">
-            <div class="signup-box">
-                <h1 class="main-heading">
-                    Grab your Showbox!
-                </h1>
-                <p class="body-text">
-                    Get the latest information and details on our brand new streaming movies platform!
-                </p>
-                <button class="signup-button">
-                    Sign up today
-                </button>
-            </div>
-        </div>
-        <div class="cube__section">
-            <div class="cube">
-                <div class="cube__container">
-                    <div class="cube__face cube__face--front">
-                        <video class="video__container" autoplay muted loop>
-                            <source class="video__media" src="https://storage.coverr.co/videos/KP78n9EWQAje1fm6Xr02N6zm7V01xxNRNK?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6IjExNDMyN0NEOTRCMUFCMTFERTE3IiwiaWF0IjoxNTg4MDIwODIzfQ._d_wNMzyykNR9_7lkgCpidj0JI4vCGuxfDKyEEfStO0" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="cube__face cube__face--back">
-                        <video class="video__container" autoplay muted loop>
-                            <source class="video__media" src="https://storage.coverr.co/videos/KefsniMdijw4at9fT02iUufbPceUuJJG2?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6IjExNDMyN0NEOTRCMUFCMTFERTE3IiwiaWF0IjoxNTg4MDIwNjcxfQ.3kzxKS0a6bQ2dCcKpTxeZS2IpVfUekVpMFrBzpBwA2M" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="cube__face cube__face--left">
-                        <video class="video__container" autoplay muted loop>
-                            <source class="video__media" src="https://storage.coverr.co/videos/34w86e7pqJzbji1yJ4gmfSanA01bjPyH7?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6IjExNDMyN0NEOTRCMUFCMTFERTE3IiwiaWF0IjoxNTg4MDIwNzYxfQ.xUJhNmkTYbzdHfVJsvVrtB4RFbn0cwaA7DRg9rEvMyU" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="cube__face cube__face--right">
-                        <video class="video__container" autoplay muted loop>
-                            <source class="video__media" src="https://storage.coverr.co/videos/8GSSdF02KLFPJQgkILrDCkRfHHuouBMVA?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6IjExNDMyN0NEOTRCMUFCMTFERTE3IiwiaWF0IjoxNTg4MDIxMDMzfQ.Wk1guDwsEY_-Y1K8vo5FkU3GhutfkMA8PPxj4Afv5_w" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="cube__face cube__face--top">
-                        <video class="video__container" autoplay muted loop>
-                            <source class="video__media" src="https://storage.coverr.co/videos/EZvZIdsvOkc00V02BDw3ZnH4VdoJK01qSsS?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6IjExNDMyN0NEOTRCMUFCMTFERTE3IiwiaWF0IjoxNTg4MDIxMTE4fQ.u6UFXCGSK755PtJtWoDAuFkasaQ7Tb2SbIXEGhFr4iw" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="cube__face cube__face--bottom">
-                        <video class="video__container" autoplay muted loop>
-                            <source class="video__media" src="https://storage.coverr.co/videos/Vcve11Kp8bptZ00n1nsBEOh02qF5fgShYW?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6IjExNDMyN0NEOTRCMUFCMTFERTE3IiwiaWF0IjoxNTg4MDIwNDgwfQ.eI4Ak0fYiUzCRoLs2VdJZLea9e-zrjzJJ6RN1OFSim4" type="video/mp4">
-                        </video>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-</body>
-</html>
-
-     
+  
+  <body>
+- var imgs = ['https://www.easypano.com/images/pw/v3/banner.jpg','https://www.publicdomainpictures.net/pictures/170000/velka/beautiful-landscape-panorama-1462783515FyK.jpg','https://www.publicdomainpictures.net/pictures/30000/velka/arizona-sunrise-panarama-1348420056Bcg.jpg','https://www.publicdomainpictures.net/pictures/190000/velka/waterfall-ben-nevis-scotland-1471093009J8y.jpg','https://upload.wikimedia.org/wikipedia/commons/0/04/Bibi-Ka-Maqbara-pano.jpg']
+//- Preload images for smoother transition
+.preloader
+	each img in imgs
+		img.img(src=img)
+//-Avatar
+a.button.me(href="https://twitter.com/ThunderGunExprs" target="_blank" title="Click for free pizza!") 🌮
+//-Split Image Gallery
+.box
+	.left.top
+		.side
+		.reflection
+		.overlay
+	.center.top
+		.side
+		.reflection
+		.overlay
+	.right.top
+		.side
+		.reflection
+		.overlay
+    
+     </body>
+  </html>
