@@ -1,316 +1,224 @@
-/* CSS reset ==============================================*/
-*,
-*::after,
-*::before {
-  box-sizing: inherit;
-  margin: 0;
-  padding: 0;
-}
-
 body {
-  box-sizing: border-box;
-  position: relative;
+	perspective: 1100px;
+	background: rgba(0, 0, 0, 1);
 }
-
-html {
-  /* formula: 1 rem = 10px; 10px/16px = 62.5% */
-  font-size: 62.5%;
-}
-
-/* Typography ================================================*/
 
 * {
-  color: #eee;
-  font-family: "Open Sans", sans-serif;
+	transition: all 1s ease;
 }
 
-/* Signup heading */
-.main-heading {
-  font-size: 3.5rem;
-  padding-bottom: 2rem;
-  width: 40rem;
+.img{
+	display:none !important;
+	opacity:0 !important;
+	position:Absolute !important;
+	left: -999%;
+	top:-999%;
 }
 
-/* Signup text */
-.body-text {
-  color: #eee;
-  font-family: "Open Sans", sans-serif;
-  font-size: 1.4rem;
-  font-weight: 300;
-  line-height: 2rem;
-  padding-bottom: 3rem;
+.box {
+	position: relative;
+	width: 65%;
+	margin: 5% auto;
+	padding-bottom: 25%;
+	transform: rotateY(29deg);
+	transform-style: preserve-3d;
+	div.top {
+		position: absolute;
+		top: 0;
+		width: 30.3%;
+		height: 100%;
+		float: left;
+		background-image: url('https://www.easypano.com/images/pw/v3/banner.jpg');
+		background-size: auto 100%;
+		transform-style: preserve-3d;
+		outline: 1px solid transparent;
+		-webkit-backface-visibility: hidden !important;
+		/* prevent jagged edges in firefox */
+		-webkit-animation: changeIt 25s infinite;
+		/* Safari 4.0 - 8.0 */
+		animation: changeIt 25s infinite;
+		&:before {
+			content: "";
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: rgba(#1abc9c, .15);
+		}
+	}
+	.left {
+		left: 0;
+		background-position: 0% 0;
+	}
+	.center {
+		left: 34.83%;
+		background-position: -100% 0;
+	}
+	.right {
+		left: 69.66%;
+		background-position: -197% 0;
+	}
+	div.top > .side {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 100%;
+		width: 10%;
+		height: 100%;
+		background: url('https://www.easypano.com/images/pw/v3/banner.jpg');
+		background-size: auto 100%;
+		transform-origin: 100% 50%;
+		transform: rotateY(-90deg);
+		-webkit-backface-visibility: hidden !important;
+		-webkit-animation: changeIt 25s infinite;
+		/* Safari 4.0 - 8.0 */
+		animation: changeIt 25s infinite;
+		&:before {
+			content: "";
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: rgba(#1abc9c, .15);
+		}
+	}
+	.left > .side {
+		background-position: 0% 0;
+	}
+	.center > .side {
+		background-position: -798% 0px !important;
+	}
+	.right > .side {
+		background-position: -2000.4% 0 !important;
+	}
+	div.top .reflection {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		transform-origin: 50% 100%;
+		transform: rotateX(-90deg);
+		background-image: url('https://www.easypano.com/images/pw/v3/banner.jpg');
+		background-size: auto 100%;
+		outline: 1px solid transparent;
+		-webkit-animation: changeIt 25s infinite;
+		/* Safari 4.0 - 8.0 */
+		animation: changeIt 25s infinite;
+	}
+	.left > .reflection {
+		left: 0;
+		background-position: 0% 0;
+	}
+	.center > .reflection {
+		left: 34.83%;
+		background-position: -100% 0;
+	}
+	.right > .reflection {
+		left: 69.66%;
+		background-position: -197% 0;
+	}
+	.overlay {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 99.7%;
+		transform-origin: 50% 100%;
+		transform: rotateX(-90deg);
+		background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.6) 123%);
+		outline: 15px solid black;
+	}
 }
 
-/* Components ================================================*/
-
-/* Signup button */
-.signup-button {
-  background-color: transparent;
-  border: 2px solid #eee;
-  border-radius: 0.5rem;
-  color: #eee;
-  font-size: 1.5rem;
-  overflow: hidden;
-  padding: 1rem 2rem;
-  position: relative;
-  transition: all 0.2s ease-in-out;
-  z-index: 10;
+@-webkit-keyframes changeIt {
+	0% {
+		background-image: url(https://www.easypano.com/images/pw/v3/banner.jpg)
+	}
+	20% {
+		background-image: url(https://www.publicdomainpictures.net/pictures/170000/velka/beautiful-landscape-panorama-1462783515FyK.jpg)
+	}
+	40% {
+		background-image: url(https://www.publicdomainpictures.net/pictures/30000/velka/arizona-sunrise-panarama-1348420056Bcg.jpg)
+	}
+	60% {
+		background-image: url(https://www.publicdomainpictures.net/pictures/190000/velka/waterfall-ben-nevis-scotland-1471093009J8y.jpg)
+	}
+	80% {
+		background-image: url(https://upload.wikimedia.org/wikipedia/commons/0/04/Bibi-Ka-Maqbara-pano.jpg)
+	}
+	100% {
+		background-image: url(http://www.easypano.com/images/pw/v3/banner.jpg)
+	}
 }
 
-.signup-button:hover {
-  color: #272829;
+
+/* Standard syntax */
+
+@keyframes changeIt {
+	0% {
+		background-image: url(http://www.easypano.com/images/pw/v3/banner.jpg)
+	}
+	20% {
+		background-image: url(http://www.publicdomainpictures.net/pictures/170000/velka/beautiful-landscape-panorama-1462783515FyK.jpg)
+	}
+	40% {
+		background-image: url(http://www.publicdomainpictures.net/pictures/30000/velka/arizona-sunrise-panarama-1348420056Bcg.jpg)
+	}
+	60% {
+		background-image: url(http://www.publicdomainpictures.net/pictures/190000/velka/waterfall-ben-nevis-scotland-1471093009J8y.jpg)
+	}
+	80% {
+		background-image: url(https://upload.wikimedia.org/wikipedia/commons/0/04/Bibi-Ka-Maqbara-pano.jpg)
+	}
+	100% {
+		background-image: url(http://www.easypano.com/images/pw/v3/banner.jpg)
+	}
 }
 
-.signup-button::before {
-  background-color: #eee;
-  content: "";
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  transform: scaleX(0);
-  transition: all 0.2s ease-in-out;
-  width: 100%;
-  z-index: -1;
+
+/* Profile Link */
+/* Profile Link */
+@mixin responsive-font($responsive,
+$min,
+$max: false,
+$fallback: false) {
+	$responsive-unitless: $responsive / ($responsive - $responsive + 1);
+	$dimension: if(unit($responsive)=='vh', 'height', 'width');
+	$min-breakpoint: $min / $responsive-unitless * 100;
+	@media (max-#{$dimension}: #{$min-breakpoint}) {
+		font-size: $min;
+	}
+	@if $max {
+		$max-breakpoint: $max / $responsive-unitless * 100;
+		@media (min-#{$dimension}: #{$max-breakpoint}) {
+			font-size: $max;
+		}
+	}
+	@if $fallback {
+		font-size: $fallback;
+	}
+	font-size: $responsive;
 }
 
-.signup-button:hover::before {
-  transform: scaleX(1);
-}
-
-/* Layout ================================================*/
-
-.main {
-  align-items: center;
-  background: linear-gradient(to right bottom, #272829, #37383b, #272829);
-  display: flex;
-  flex-direction: row;
-  height: 100vh;
-  position: relative;
-  width: 100%;
-}
-
-/* Signup section (on left side) */
-.signup-section {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  margin-left: 4rem;
-  justify-content: center;
-  width: 45%;
-}
-
-/* Container for heading, text, and button  */
-.signup-box {
-  width: 100%;
-  height: 55%;
-}
-
-/* Showbox cube section (on right side) */
-.cube__section {
-  align-items: center;
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-  width: 60%;
-}
-
-/* The cube - where the fun begins :) ===========================*/
-
-/* The cube outer container */
-.cube {
-  height: 20rem;
-  perspective: 60rem;
-  width: 20rem;
-}
-
-/* The cube's inner container */
-/* Note: rotationBox keyframes is placed right at the end */
-.cube__container {
-  animation: rotationBox 20s linear infinite forwards;
-  height: 100%;
-  position: relative;
-  transform: translateZ(-10rem);
-  transform-style: preserve-3d;
-  width: 100%;
-}
-
-/* This will target every single side of the cubez */
-.cube__face {
-  align-items: center;
-  background-color: #eee;
-  display: flex;
-  height: 20rem;
-  justify-content: center;
-  overflow: hidden;
-  position: absolute;
-  width: 20rem;
-}
-
-/* This will target an individual side of the cube */
-.cube__face--front {
-  transform: rotateY(0deg) translateZ(10rem);
-}
-.cube__face--back {
-  transform: rotateY(180deg) translateZ(10rem);
-}
-.cube__face--left {
-  transform: rotateY(-90deg) translateZ(10rem);
-}
-.cube__face--right {
-  transform: rotateY(90deg) translateZ(10rem);
-}
-.cube__face--top {
-  transform: rotateX(90deg) translateZ(10rem);
-}
-.cube__face--bottom {
-  transform: rotateX(-90deg) translateZ(10rem);
-}
-
-/* Videos ==============================================================*/
-
-/* Specifically targeting the <video> element */
-.video__container {
-  height: auto;
-  min-height: 100%;
-  object-fit: cover;
-  width: 100%;
-}
-
-/* Responsive ============================================================*/
-
-/* Tablet */
-@media only screen and (max-width: 48em) {
-  /* CSS Reset */
-
-  html {
-    font-size: 56.25%;
-  }
-
-  /* Typography */
-
-  /* Signup heading */
-  .main-heading {
-    width: 100%;
-  }
-
-  /* Layout */
-
-  .main {
-    flex-direction: column-reverse;
-    height: 100%;
-  }
-
-  /* Signup section (on left side) */
-  .signup-section {
-    height: 100%;
-    margin-left: 0;
-    width: 100%;
-  }
-
-  /* Container for heading, text, and button  */
-  .signup-box {
-    height: 100%;
-    padding: 3rem 2rem;
-    text-align: center;
-  }
-
-  /* Showbox cube section (on right side) */
-  .cube__section {
-    height: 100vh;
-    width: 100%;
-  }
-}
-
-/* Mobile */
-@media only screen and (max-width: 22.5em) {
-  /* Typography */
-
-  /* Signup text */
-  .body-text {
-    font-size: 1.8rem;
-    line-height: 2.8rem;
-  }
-
-  /* Layout */
-
-  /* Signup section (on left side) */
-  .signup-section {
-    height: 100%;
-    margin-left: 0;
-    width: 100%;
-  }
-
-  /* Container for heading, text, and button  */
-  .signup-box {
-    height: 100%;
-    padding: 3rem;
-    padding-top: 1rem;
-    text-align: center;
-  }
-
-  /* Showbox cube section (on right side) */
-  .cube__section {
-    height: 60vh;
-    width: 100%;
-  }
-
-  /* The cube outer container */
-  .cube {
-    height: 15rem;
-    perspective: 60rem;
-    width: 15rem;
-  }
-
-  /* The cube's inner container */
-  .cube__container {
-    transform: translateZ(-7.5rem);
-  }
-
-  /* This will target every single side of the cubes */
-  .cube__face {
-    height: 15rem;
-    width: 15rem;
-  }
-
-  /* This will target an individual side of the cube */
-  .cube__face--front {
-    transform: rotateY(0deg) translateZ(7.5rem);
-  }
-  .cube__face--back {
-    transform: rotateY(180deg) translateZ(7.5rem);
-  }
-  .cube__face--left {
-    transform: rotateY(-90deg) translateZ(7.5rem);
-  }
-  .cube__face--right {
-    transform: rotateY(90deg) translateZ(7.5rem);
-  }
-  .cube__face--top {
-    transform: rotateX(90deg) translateZ(7.5rem);
-  }
-  .cube__face--bottom {
-    transform: rotateX(-90deg) translateZ(7.5rem);
-  }
-}
-
-/* Animation ============================================================*/
-
-@keyframes rotationBox {
-  0% {
-    transform: rotate3d(0, 0, 0, 0deg);
-  }
-  25% {
-    transform: rotate3d(0, 1, 1, 90deg);
-  }
-  50% {
-    transform: rotate3d(1, 0, 1, 180deg);
-  }
-  75% {
-    transform: rotate3d(1, 1, 0, 240deg);
-  }
-  100% {
-    transform: rotate3d(1, 1, 1, 360deg);
-  }
+$size:3vw;
+$max:36px;
+.button.me {
+	@include responsive-font($size, $size, $max, $max);
+	position: absolute;
+	bottom: -75%;
+	right: 5%;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	opacity:.5;
+	transition:opacity .5s ease;
+	border-radius:5px;
+	z-index:9999;
+	&:hover {
+		opacity: 1;
+	}
 }
